@@ -24,7 +24,7 @@ def lemmas(text):
 
 data = pd.read_csv('merged_file.csv')
 
-for i in range(200):
+for i in range(len(data['Purpose'])):
     tokens.extend(get_tokens(lemmas(stems(data['Purpose'][i]))))
 
 tokens_freq = Counter(tokens)
