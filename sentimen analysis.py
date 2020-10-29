@@ -9,8 +9,8 @@ def sentiment_analysis(text):
     return analyser.polarity_scores(text)
 
 
-sentiment = [None] * 200
-for i in range(200):
+sentiment = [None] * len(data['Purpose'])
+for i in range(len(data['Purpose'])):
     sentiment[i] = sentiment_analysis(data['Purpose'][i])['compound']
 
 best_idea = sentiment.index(max(sentiment))
